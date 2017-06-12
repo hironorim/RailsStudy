@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h1><%= @title %></h1>
+        <p><%= @msg %></p>
+        <p><%= @inputValue %></p>
+        <p><%= @yourOS %></p>
+        <%= form_tag(controller: "helo", action: "index") do %>
+            <%= check_box_tag("check1") %>
+            <%= label_tag("check1", "check box") %><br/>
+            <%= text_field_tag("input1") %>
+            <%= select_tag("select1", options_for_select(["windows", "macOSX", "Linux"])) %>
+            <%= submit_tag("Click") %>
+        <% end %>
+    </body>
+</html>
