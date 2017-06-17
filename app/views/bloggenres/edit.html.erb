@@ -2,12 +2,12 @@
 <p>※ジャンルデータの編集</p>
 <% if @bloggenre.errors.any? %>
 <ul>
-    <% @bloggenre.errors.full_message.each. do |err| %>
+    <% @bloggenre.errors.full_message.each do |err| %>
         <li><%= err %></li>
     <% end %>
 </ul>
 <% end %>
-<%= form_for(@bloggenre, url:{controller: 'bloggenres', action: 'edit') do |form| %>
+<%= form_for(@bloggenre, url:{controller: 'bloggenres', action: 'edit'}) do |form| %>
 <table>
     <tr>
         <th>name</th>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <th></th>
-        <td><% form.submit "送信" %></td>
+        <td><%= form.submit "送信" %></td>
     </tr>
 </table>
 <% end %>

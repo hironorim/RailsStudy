@@ -7,15 +7,16 @@ class BloggenresController < ApplicationController
 
   def add
     @bloggenre = Bloggenre.new
-    if request.post then
-      @bloggenre = Bloggenre.create bloggenre_params
+    if request.post? then
+      @bloggenre = Bloggenre.create bloggenres_params
       redirect_to '/bloggenres'
+    end
   end
 
   def edit
     @bloggenre = Bloggenre.find params[:id]
     if request.patch? then
-      @bloggenre.update bloggenre_params
+      @bloggenre.update bloggenres_params
       redirect_to '/bloggenres'
     end
   end

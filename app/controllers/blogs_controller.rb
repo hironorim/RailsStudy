@@ -4,10 +4,10 @@ class BlogsController < ApplicationController
   def index
     page_size = 5
     @page_num = 0
-    if params[:page] != nill then
+    if params[:page] != nil then
         @page_num = params[:page].to_i
     end
-    @data = Blogpost.all.ordere('created_at desc')
+    @data = Blogpost.all.order('created_at desc')
       .offset(page_size * @page_num)
       .limit(page_size)
     @blogconfig = Blogconfig.find 1
@@ -16,12 +16,12 @@ class BlogsController < ApplicationController
   def genre
     page_size = 5
     @page_num = 0
-    if params[:page] != nill then
+    if params[:page] != nil then
       @page_num = params[:page].to_i
     end
     @genre = Bloggenre.find params[:id]
     @data = Blogpost.where('bloggenre_id = ?', params[:id])
-      .order('creagted_at desc').offset(page_size * @page_num)
+      .order('created_at desc').offset(page_size * @page_num)
       .limit(page_size)
     @blogconfig = Blogconfig.find 1
   end

@@ -27,9 +27,10 @@
     </tr>
     <tr>
         <th></th>
-        <td><% form.submit "送信" %></td>
+        <td><%= form.submit "送信" %></td>
     </tr>
 </table>
+<% end %>
 <hr>
 <p>※ジャンル一覧</p>
 <table>
@@ -37,9 +38,10 @@
         <th>Id</th>
         <th>Genre</th>
     </tr>
-    <%= genres.each do |obj| %>
+    <% @genres.each do |obj| %>
     <tr>
         <td><%= obj.id %></td>
         <td><%= obj.name %></td>
     </tr>
+    <% end %>
 </table>

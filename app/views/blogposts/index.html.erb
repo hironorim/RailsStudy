@@ -8,7 +8,7 @@
         <th>genre</th>
         <th colspan="2"></th>
     </tr>
-    <% data.each do |obj| %>
+    <% @data.each do |obj| %>
     <tr>
         <td><%= obj.id %></td>
         <td><%= obj.title %></td>
@@ -17,4 +17,6 @@
         <td><a href="/blogposts/<%= obj.id %>">Edit</a></td>
         <td><a href="/blogposts/delete/<%= obj.id %>">Delete</a></td>
     </tr>
+    <% end %>
 </table>
+<p><a href="/blogposts/add">新規作成＞＞</a></p>

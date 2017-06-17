@@ -16,7 +16,7 @@
     </header>
     <hr>
     <div id="side">
-    <%= Bloggenre.all.each do |genre| %>
+    <% Bloggenre.all.each do |genre| %>
         <p><a href="/blogs/genre/<%= genre.id %>"><%= genre.name %></a></p>
     <% end %>
     </div>

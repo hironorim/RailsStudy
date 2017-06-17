@@ -10,6 +10,7 @@ class BlogconfigsController < ApplicationController
     if request.patch? then
       @blogconfig.update blogconfig_params
       redirect_to '/blogconfigs'
+    end
   end
 
   private
