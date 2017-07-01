@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :accounts
+  resources :board_messages
+  resources :board_users
+  resources :answers
+  resources :questions
   get 'blogs/index'
 
   get 'blogs/genre'
@@ -56,7 +61,7 @@ Rails.application.routes.draw do
 
   get 'cards/delete/:id', to: 'cards#delete'
 
-  get 'blogs/inde'
+  get 'blogs/index'
   get 'blogs', to: 'blogs#index'
   get 'blogs/:page', to: 'blogs#index'
 
